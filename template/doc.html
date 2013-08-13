@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="Content-Script-Type" content="text/JavaScript" />
+		<title>[% title %]</title>
+		<style>
+			h1 {
+				border-left:10px solid blue;
+				border-bottom:3px solid blue;
+			}
+			h2 {
+				border-left:7px solid green;
+				border-bottom:2px solid green;
+			}
+			table {
+				border: 1px solid silver;
+				width:100%;
+			}
+			img {
+				width: 400px;
+			}
+			.error {
+				color:red;
+				font-weight:bold;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>[% title %]</h1>
+		<!-- error start -->
+		<div class="error">この機能ではエラーが発生しています</div>
+		<!-- error end -->
+		<!-- capter start -->
+		<div>
+			<h2>[% capter %]</h2>
+			<p>[% capter_description %]</p>
+		</div>
+		<!-- section start -->
+		<table>
+			<tr>
+				<td colspan="2">
+					<h3>[% section %]</h3>
+					<p>[% section_description %]</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					[% capture %]
+				</td>
+				<td>
+					<ul>
+						<!-- label start -->
+						<li>[% label %]</li>
+						<!-- label end -->
+					</ul>
+				</td>
+			</tr>
+		</table>
+		<!-- section end -->
+		<!-- capter end -->
+	</body>
+</html>

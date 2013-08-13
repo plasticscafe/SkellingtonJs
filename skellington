@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SKELLINGTON_PATH=lib/SkellingtonJS
+
+SCRIPT_PATH=`pwd`
+LIB_PATH=`dirname $0`
+
+casperjs test $1 --path=$LIB_PATH --spath=$SCRIPT_PATH --only=$2

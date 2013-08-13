@@ -1,0 +1,16 @@
+{
+  "name": "SkellingtonJs",
+  "version": "0.0.0",
+  "description": "Unit Test to Document Creater use CasperJS",
+  "main": "jack.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": "",
+  "author": "plasticscafe",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.2"
+  }
+}
