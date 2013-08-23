@@ -129,7 +129,7 @@ var Finklestein = function(casper, assert){
     });
   };
   // original expanded test
-  that.assertTextNodeExist = function(selector, txt, msg){ 
+  that.assertTextNodeExists = function(selector, txt, msg){ 
     return assert(msg, function(){
       var s = selector;
       var t = txt;
