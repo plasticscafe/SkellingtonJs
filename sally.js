@@ -1,4 +1,4 @@
-var Sally = function(path){
+var Sally = function(require, path){
   var that = that || {};
   var fs = require('fs');
   var customTemplate = path + '/../../template/doc.html';
@@ -87,8 +87,8 @@ var Sally = function(path){
   return that;
 };
 
-module.exports = function(path){
+module.exports = function(require, path){
   var F = function(){};
-  F.prototype = Sally(path);
+  F.prototype = Sally(require, path);
   return new F();
 };

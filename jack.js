@@ -1,7 +1,7 @@
 // SkellingtonJs is wrapper of casperJs
 var Skellington = function(casper, require, p, o){  
   // modules
-  var sally = require(p + '/sally.js')(p);
+  var sally = require(p + '/sally.js')(require, p);
   // private 
   var option = o || {};
   option.capture = option.capture || {};
