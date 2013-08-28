@@ -16,7 +16,7 @@ req = (module) ->
 # call jack 
 jack = require('../jack')(req, '..')
 # test start
-describe 'test of Jack as SkellingtonJs main'
+describe 'test of Jack as SkellingtonJs main', ->
   describe 'basic test', ->
     it 'jack exist', ->
       jack.should.be.ok

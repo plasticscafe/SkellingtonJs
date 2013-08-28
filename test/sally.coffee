@@ -12,7 +12,7 @@ req = (module) ->
 
 # call sally 
 sally = require('../sally')(req, '..')
-describe 'test of Sally as docs template engine'
+describe 'test of Sally as docs template engine', ->
   describe 'basic test', ->
     it 'sally exist', ->
       sally.should.be.ok
