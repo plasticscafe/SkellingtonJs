@@ -44,11 +44,11 @@ CasperJSが必須のため下記ページより事前に設定
     jack.capter '検索画面', -> #　*** Capter Define ***
       jack.start '/', -> 
         jack.section '検索ページ'  # *** Section Define ***
-        jack.assertUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
+        jack.isUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
       jack.then -> jack.form("[action='/search']", {q: "skellington"})
       jack.then -> 
         jack.section title:'検索実行'   # *** Section Define ***
-        jack.assertUrlMatch('search', '検索ページに遷移')
+        jack.isUrlMatch('search', '検索ページに遷移')
         jack.assertTextExists('Jack Skellington', '検索ワードに応じた結果が一覧に表示される')
     # Test Execute 
     jack.run ->
@@ -96,23 +96,22 @@ index.htmlが生成されます
 
 ### テストの定義（ドキュメント上のラベル）
 
+* [テストメッセージ]はマニュアルに項目として羅列される（節でhiddenオプションを付けた場合は出力されない）
+* 失敗したテストはマニュアル上で[Fail]表示される
+* 同一節内で複数宣言可
+
 #### 基本的なテスト
+
+* `jack.isUrlMatch [url], [テストメッセージ]`
+	* 現在滞在中のページURLが指定のものとマッチするかどうか
+
+#### CasperJSのテストも使用可能
+
 * CasperJsのtesterに準ずる
 	* <http://docs.casperjs.org/en/latest/modules/tester.html>
-* casper.testと同様に`jack.assert"HogeHoge" [arg1], [arg2] … , [テストメッセージ]`の形式で記術
-* [テストメッセージ]はマニュアルに項目として羅列される（節でhiddenオプションを付けた場合は出力されない）
-	* 失敗したテストはマニュアル上で[Fail]表示される
-* 同一節内で複数宣言可
-#### 拡張テスト(今後増える予定。。。)
-以下は別途拡張したテスト
+* casper.testと同様に`jack.assert<テスト名> [arg1], [arg2] … , [テストメッセージ]`の形式で記術
 
-* `jack.assertTextNodeExist [selector], [txt], [テストメッセージ]`
-	* 特定セレクタ内に指定の文字列が含まれるかどうかを判定(完全一致)
-* `jack.assertTextNodeDosentExist [selector], [txt], [テストメッセージ]`
-	* 特定セレクタ内に指定の文字列が含まれないかどうかを判定
-* `jack.assertTextNodeDosentExist [selector], [txt], [テストメッセージ]`
-	* 特定セレクタ内に指定の文字列が含まれるかどうかを判定(部分一致)
- 
+
 ### キャプチャ宣言
 * テスト中の特定状態の画面キャプチャを取得する
 	* `jack.capture [ファイル名] `で宣言
@@ -169,11 +168,11 @@ docs.coffeeとして上記を作成し、また各ページ用テストファイ
       jack.capter {title:'検索画面', prefix:'001search'}, ->
         jack.start '/', -> 
           jack.section '検索ページ'
-          jack.assertUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
+          jack.isUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
         jack.then -> jack.form("[action='/search']", {q: "skellington"})
         jack.then -> 
           jack.section title:'検索実行'
-          jack.assertUrlMatch('search', '検索ページに遷移')
+          jack.isUrlMatch('search', '検索ページに遷移')
           jack.assertTextExists('Jack Skellington', '検索ワードに応じた結果が一覧に表示される')
       # Test Execute 
       jack.run ->
@@ -190,11 +189,11 @@ docs.coffeeとして上記を作成し、また各ページ用テストファイ
       jack.capter {title:'検索されない画面', prefix:'002search'}, ->
         jack.start '/', -> 
           jack.section '検索ページ'
-          jack.assertUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
+          jack.isUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
         jack.then -> jack.form("[action='/search']", {q: "jack"})
         jack.then -> 
           jack.section title:'検索実行'
-          jack.assertUrlMatch('search', '検索ページに遷移')
+          jack.isUrlMatch('search', '検索ページに遷移')
           jack.assertTextDoesntExist('Jack Skellington', '検索ワードに応じた結果が一覧に表示されない')
       # Test Execute 
       jack.run ->

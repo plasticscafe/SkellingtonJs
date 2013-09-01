@@ -9,12 +9,12 @@ jack = require(path + '/jack.js')(require, path, option)
 jack.capter '検索画面', ->
   jack.start '/', -> 
     jack.section '検索ページ'
-    jack.assertUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
+    jack.isUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
   jack.then -> jack.form("[action='/search']", {q: "skellington"})
   jack.then -> 
     jack.section title:'検索実行'
-    jack.assertUrlMatch('search', '検索ページに遷移')
-    jack.assertTextExists('Jack Skellington', '検索ワードに応じた結果が一覧に表示される')
+    jack.isUrlMatch('search', '検索ページに遷移')
+    jack.hasText('Jack Skellington', '検索ワードに応じた結果が一覧に表示される')
 # Test Execute 
 jack.run ->
   jack.createHtml()
