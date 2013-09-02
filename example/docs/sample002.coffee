@@ -10,7 +10,7 @@ module.exports = (require, option, next) ->
     jack.then -> jack.form("[action='/search']", {q: "jack"})
     jack.then -> 
       jack.section title:'検索実行'
-      jack.isUrlMatch('search', '検索ページに遷移')
+      jack.isUrlMatch('', '検索ページに遷移')
       jack.hasNoText('Jack Skellington', '検索ワードに応じた結果が一覧に表示されない')
   # Test Execute 
   jack.run ->
