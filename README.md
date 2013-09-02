@@ -105,6 +105,31 @@ index.htmlが生成されます
 * `jack.isUrlMatch [url], [テストメッセージ]`
 	* 現在滞在中のページURLが指定のものとマッチするかどうか
 
+* `jack.isTitle [title], [テストメッセージ]`
+	* 現在滞在中のページタイトルが指定の文字列と一致するかどうか
+
+* `jack.isTitleMatch [title pattern], [テストメッセージ]`
+	* 現在滞在中のページタイトルが指定の正規表現とマッチするかどうか
+
+* `jack.hasText [text], [テストメッセージ]`
+	* ページ内に指定文字列が存在するかどうか
+
+* `jack.hasNoText [text], [テストメッセージ]`
+	* ページ内に指定文字列が存在"しない"かどうか
+
+* `jack.hasLink [href], [テストメッセージ]`
+	* ページ内に指定されたhrefを持つリンクが存在するかどうか
+
+* `jack.hasNoText [href], [テストメッセージ]`
+	* ページ内に指定されたhrefを持つリンクが存在"しない"かどうか
+
+* `jack.hasNode [selector], [テストメッセージ]`
+	* ページ内にSelector指定されたHTML要素が存在するかどうか
+
+* `jack.hasNoText [href], [テストメッセージ]`
+	* ページ内にSelector指定されたHTML要素が存在"しない"かどうか
+
+
 #### CasperJSのテストも使用可能
 
 * CasperJsのtesterに準ずる
