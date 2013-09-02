@@ -44,12 +44,12 @@ CasperJSが必須のため下記ページより事前に設定
     jack.capter '検索画面', -> #　*** Capter Define ***
       jack.start '/', -> 
         jack.section '検索ページ'  # *** Section Define ***
-        jack.isUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
-      jack.then -> jack.form("[action='/search']", {q: "skellington"})
+        jack.isUrlMatch '/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く'
+      jack.then -> jack.form "[action='/search']", {q: "skellington"}
       jack.then -> 
         jack.section title:'検索実行'   # *** Section Define ***
-        jack.isUrlMatch('search', '検索ページに遷移')
-        jack.assertTextExists('Jack Skellington', '検索ワードに応じた結果が一覧に表示される')
+        jack.isUrlMatch '', '検索ページに遷移'
+        jack.hasText 'Jack Skellington', '検索ワードに応じた結果が一覧に表示される'
     # Test Execute 
     jack.run ->
       jack.createHtml()
@@ -193,12 +193,12 @@ docs.coffeeとして上記を作成し、また各ページ用テストファイ
       jack.capter {title:'検索画面', prefix:'001search'}, ->
         jack.start '/', -> 
           jack.section '検索ページ'
-          jack.isUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
-        jack.then -> jack.form("[action='/search']", {q: "skellington"})
+          jack.isUrlMatch '/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く'
+        jack.then -> jack.form "[action='/search']", {q: "skellington"}
         jack.then -> 
           jack.section title:'検索実行'
-          jack.isUrlMatch('search', '検索ページに遷移')
-          jack.assertTextExists('Jack Skellington', '検索ワードに応じた結果が一覧に表示される')
+          jack.isUrlMatch '', '検索ページに遷移'
+          jack.hasText 'Jack Skellington', '検索ワードに応じた結果が一覧に表示される'
       # Test Execute 
       jack.run ->
         next jack, '検索ページ', 'search' # ページタイトル、ページファイルを定義
@@ -214,12 +214,12 @@ docs.coffeeとして上記を作成し、また各ページ用テストファイ
       jack.capter {title:'検索されない画面', prefix:'002search'}, ->
         jack.start '/', -> 
           jack.section '検索ページ'
-          jack.isUrlMatch('/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く')
-        jack.then -> jack.form("[action='/search']", {q: "jack"})
+          jack.isUrlMatch '/', 'ブラウザでhttp://google.co.jp/を指定すると検索ページを開く'
+        jack.then -> jack.form "[action='/search']", {q: "jack"}
         jack.then -> 
           jack.section title:'検索実行'
-          jack.isUrlMatch('search', '検索ページに遷移')
-          jack.assertTextDoesntExist('Jack Skellington', '検索ワードに応じた結果が一覧に表示されない')
+          jack.isUrlMatch '', '検索ページに遷移'
+          jack.hasNoText 'Jack Skellington', '検索ワードに応じた結果が一覧に表示されない'
       # Test Execute 
       jack.run ->
         next jack, '検索されないワード', 'no_search'
@@ -259,9 +259,11 @@ docs.coffeeとして上記を作成し、また各ページ用テストファイ
 ---------------------------------
 * テストファイルと同階層にtemplateディレクトリを作成
 * SkellingtonJsフォルダ内のtemplateをコピーしてカスタマイズしたファイルを作成
+
 #### doc.html
 画面マニュアル用テンプレート 
+
 #### index.html
 一覧ページ用テンプレート
-	
+
 カスタムテンプレートが存在しない場合は上記のデフォルトテンプレートを使用
