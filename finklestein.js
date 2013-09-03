@@ -91,6 +91,26 @@ var Finklestein = function(casper, assert){
       casper.test.assertDoesntExist(selector, msg);
     });
   };
+  that.hasButton = function(){ 
+    var args = arguments;
+    var msg = arguments[arguments.length -1];
+    return assert(msg, function(){
+      var selector = 'input[type="button"]';
+      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
+      casper.test.assertExists(selector, msg);
+    });
+  };
+  that.hasNoButton = function(){ 
+    var args = arguments;
+    var msg = arguments[arguments.length -1];
+    return assert(msg, function(){
+      var selector = 'input[type="button"]';
+      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
+      casper.test.assertDoesntExist(selector, msg);
+    });
+  };
+
+
 
   // return tests
   return that;
