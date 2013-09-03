@@ -110,27 +110,33 @@ describe 'test of finklestein as SkellingtonJs tester', ->
           result.should.eql 'casper assertDoesntExist call :[args] selector,msg'
 
 
-    ###
     describe 'Form Item', ->
       describe 'hasSubmit', ->
         it 'hasSubmit exist', ->
           finklestein.hasSubmit.should.be.ok
         it 'hasSubmit call casper method', ->
           finklestein.hasSubmit()
-          result.should.eql 'casper assertExists call'
+          result.should.eql 'casper assertExists call :[args] input[type="submit"]'
         it 'hasSubmit select no attr_name', ->
           finklestein.hasSubmit('msg')
-          result.should.eql 'casper assertExists call :[args] input[type="submit"]|msg'
+          result.should.eql 'casper assertExists call :[args] input[type="submit"],msg'
         it 'hasSubmit select attr_name', ->
           finklestein.hasSubmit('submit', 'msg')
-          result.should.eql 'casper assertExists call :[args] input[type="submit"][name="submit"]|msg'
-
+          result.should.eql 'casper assertExists call :[args] input[type="submit"][name="submit"],msg'
       describe 'hasNoSubmit', ->
         it 'hasNoSubmit exist', ->
           finklestein.hasNoSubmit.should.be.ok
         it 'hasNoSubmit call casper method', ->
           finklestein.hasNoSubmit()
-          result.should.eql 'casper assertDoesntExist call'
+          result.should.eql 'casper assertDoesntExist call :[args] input[type="submit"]'
+        it 'hasNoSubmit select no attr_name', ->
+          finklestein.hasNoSubmit('msg')
+          result.should.eql 'casper assertDoesntExist call :[args] input[type="submit"],msg'
+        it 'hasNoSubmit select attr_name', ->
+          finklestein.hasNoSubmit('submit', 'msg')
+          result.should.eql 'casper assertDoesntExist call :[args] input[type="submit"][name="submit"],msg'
+
+      ###
       describe 'hasButton', ->
         it 'hasButton exist', ->
           finklestein.hasButton.should.be.ok

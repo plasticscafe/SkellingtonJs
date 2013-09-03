@@ -74,22 +74,23 @@ var Finklestein = function(casper, assert){
 
   // form 
   that.hasSubmit = function(){ 
+    var args = arguments;
     var msg = arguments[arguments.length -1];
     return assert(msg, function(){
       var selector = 'input[type="submit"]';
-      if(arguments.length > 2) selector = selector + '[name="'+arguments[0]+'"]';
+      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
       casper.test.assertExists(selector, msg);
     });
   };
   that.hasNoSubmit = function(){ 
+    var args = arguments;
     var msg = arguments[arguments.length -1];
     return assert(msg, function(){
       var selector = 'input[type="submit"]';
-      if(arguments.length > 2) selector = selector + '[name="'+arguments[0]+'"]';
+      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
       casper.test.assertDoesntExist(selector, msg);
     });
   };
-   
 
   // return tests
   return that;
