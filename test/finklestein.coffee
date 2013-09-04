@@ -129,49 +129,6 @@ describe 'test of finklestein as SkellingtonJs tester', ->
       describe 'hasNoSubmit', formDescribe 'hasNoSubmit', 'submit', 'assertDoesntExist'
       describe 'hasButton', formDescribe 'hasButton', 'button', 'assertExists'
       describe 'hasNoButton', formDescribe 'hasNoButton', 'button', 'assertDoesntExist'
-
-      ###
-      describe 'hasInputText', ->
-        it 'hasInputText exist', ->
-          finklestein.hasInputText.should.be.ok
-        it 'hasInputText call casper method', ->
-          finklestein.hasInputText()
-          result.should.eql 'casper assertExists call'
-
-      describe 'hasNoInput', ->
-        it 'hasNoInput exist', ->
-          finklestein.hasNoInput.should.be.ok
-        it 'hasNoInput call casper method', ->
-          finklestein.hasNoInput()
-          result.should.eql 'casper assertDoesntExist call'
-
-      describe 'hasInputPassword', ->
-        it 'hasInputPassword exist', ->
-          finklestein.hasInputPassword.should.be.ok
-        it 'hasInputPassword call casper method', ->
-          finklestein.hasInputPassword()
-          result.should.eql 'casper assertExists call'
-
-      describe 'hasNoInputPassword', ->
-        it 'hasNoInputPassword exist', ->
-          finklestein.hasNoInputPassword.should.be.ok
-        it 'hasNoInputPassword call casper method', ->
-          finklestein.hasNoInputPassword()
-          result.should.eql 'casper assertDoesntExist call'
-
-      describe 'hasTextarea', ->
-        it 'hasTextarea exist', ->
-          finklestein.hasTextarea.should.be.ok
-        it 'hasTextarea call casper method', ->
-          finklestein.hasTextarea()
-          result.should.eql 'casper assertExists call'
-
-      describe 'hasNoTextarea', ->
-        it 'hasNoTextarea exist', ->
-          finklestein.hasNoTextarea.should.be.ok
-        it 'hasNoTextarea call casper method', ->
-          finklestein.hasNoInputPassword()
-          result.should.eql 'casper assertDoesntExist call'
-      ###
-
+      describe 'hasInputText', formDescribe 'hasInputText', 'text', 'assertExists'
+      describe 'hasNoInputText', formDescribe 'hasNoInputText', 'text', 'assertDoesntExist'
 

@@ -91,9 +91,8 @@ var Finklestein = function(casper, assert){
   that.hasNoSubmit = assertFormItem('submit', false); 
   that.hasButton = assertFormItem('button', true); 
   that.hasNoButton = assertFormItem('button', false); 
-
-  //that.hasInput = assertFormItem('text', true); 
-  //that.hasNoInput = assertFormItem('text', false); 
+  that.hasInputText = assertFormItem('text', true); 
+  that.hasNoInputText = assertFormItem('text', false); 
 
   // return tests
   return that;
