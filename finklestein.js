@@ -72,45 +72,25 @@ var Finklestein = function(casper, assert){
     });
   };
 
-  // form 
-  that.hasSubmit = function(){ 
-    var args = arguments;
-    var msg = arguments[arguments.length -1];
-    return assert(msg, function(){
-      var selector = 'input[type="submit"]';
-      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
-      casper.test.assertExists(selector, msg);
-    });
+  //////// form 
+  // form assert function
+  var assertFormItem = function(type, has){
+    var assertType = (has === false) ? 'assertDoesntExist' : 'assertExists';
+    var t = type;
+    return function(){
+      var args = arguments;
+      var msg = arguments[arguments.length -1];
+      return assert(msg, function(){
+        var selector = 'input[type="'+t+'"]';
+        if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
+        casper.test[assertType](selector, msg);
+      });
+    };
   };
-  that.hasNoSubmit = function(){ 
-    var args = arguments;
-    var msg = arguments[arguments.length -1];
-    return assert(msg, function(){
-      var selector = 'input[type="submit"]';
-      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
-      casper.test.assertDoesntExist(selector, msg);
-    });
-  };
-  that.hasButton = function(){ 
-    var args = arguments;
-    var msg = arguments[arguments.length -1];
-    return assert(msg, function(){
-      var selector = 'input[type="button"]';
-      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
-      casper.test.assertExists(selector, msg);
-    });
-  };
-  that.hasNoButton = function(){ 
-    var args = arguments;
-    var msg = arguments[arguments.length -1];
-    return assert(msg, function(){
-      var selector = 'input[type="button"]';
-      if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
-      casper.test.assertDoesntExist(selector, msg);
-    });
-  };
-
-
+  that.hasSubmit = assertFormItem('submit', true); 
+  that.hasNoSubmit = assertFormItem('submit', false); 
+  that.hasButton = assertFormItem('button', true); 
+  that.hasNoButton = assertFormItem('button', false); 
 
   // return tests
   return that;
