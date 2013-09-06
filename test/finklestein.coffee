@@ -137,4 +137,22 @@ describe 'test of finklestein as SkellingtonJs tester', ->
       describe 'hasNoInputRadio', formDescribe 'hasNoInputRadio', 'radio', 'assertDoesntExist'
       describe 'hasInputCheckbox', formDescribe 'hasInputCheckbox', 'checkbox', 'assertExists'
       describe 'hasNoInputCheckbox', formDescribe 'hasNoInputCheckbox', 'checkbox', 'assertDoesntExist'
+      # for Select
+      formSelectDescribe = (test, assert) ->
+        ->
+          it test + ' exist', ->
+            finklestein[test].should.be.ok
+          it test + ' call casper method', ->
+            finklestein[test]()
+            result.should.eql 'casper '+assert+' call :[args] select'
+          it test + ' select no attr_name', ->
+            finklestein[test]('msg')
+            result.should.eql 'casper '+assert+' call :[args] select,msg'
+          it test + ' select attr_name', ->
+            finklestein[test]('name', 'msg')
+            result.should.eql 'casper '+assert+' call :[args] select[name="name"],msg'
+      describe 'hasSelect', formSelectDescribe 'hasSelect', 'assertExists'
+      describe 'hasNoSelect', formSelectDescribe 'hasNoSelect', 'assertDoesntExist'
+
+
 

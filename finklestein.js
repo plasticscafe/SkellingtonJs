@@ -99,6 +99,23 @@ var Finklestein = function(casper, assert){
   that.hasNoInputRadio = assertFormItem('radio', false); 
   that.hasInputCheckbox = assertFormItem('checkbox', true); 
   that.hasNoInputCheckbox = assertFormItem('checkbox', false); 
+
+  // form select assert function
+  var assertFormSelect = function(has){
+    var assertType = (has === false) ? 'assertDoesntExist' : 'assertExists';
+    return function(){
+      var args = arguments;
+      var msg = arguments[arguments.length -1];
+      return assert(msg, function(){
+        var selector = 'select';
+        if(args.length > 1) selector = selector + '[name="'+args[0]+'"]';
+        casper.test[assertType](selector, msg);
+      });
+    };
+  };
+  that.hasSelect = assertFormSelect(true); 
+  that.hasNoSelect = assertFormSelect(false); 
+
   
 
   // return tests
