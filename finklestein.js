@@ -116,8 +116,8 @@ var Finklestein = function(casper, assert){
   };
   that.hasSelect = assertFormItem('select', true); 
   that.hasNoSelect = assertFormItem('select', false); 
-
-  
+  that.hasTextarea = assertFormItem('textarea', true); 
+  that.hasNoTextarea = assertFormItem('textarea', false); 
 
   // return tests
   return that;

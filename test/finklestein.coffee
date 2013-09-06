@@ -154,11 +154,5 @@ describe 'test of finklestein as SkellingtonJs tester', ->
 
       describe 'hasSelect', formItemDescribe 'hasSelect', 'select', 'assertExists'
       describe 'hasNoSelect', formItemDescribe 'hasNoSelect', 'select', 'assertDoesntExist'
-      
-      #describe 'hasSelect', formSelectDescribe 'hasSelect', 'assertExists'
-      #describe 'hasNoSelect', formSelectDescribe 'hasNoSelect', 'assertDoesntExist'
-
-
-
-
-
+      describe 'hasTextarea', formItemDescribe 'hasTextarea', 'textarea', 'assertExists'
+      describe 'hasNoTextarea', formItemDescribe 'hasNoTextarea', 'textarea', 'assertDoesntExist'
