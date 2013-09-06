@@ -73,7 +73,7 @@ var Finklestein = function(casper, assert){
   };
 
   //////// form 
-  // form assert function
+  // form input assert function
   var assertFormItem = function(type, has){
     var assertType = (has === false) ? 'assertDoesntExist' : 'assertExists';
     var t = type;
@@ -93,6 +93,13 @@ var Finklestein = function(casper, assert){
   that.hasNoButton = assertFormItem('button', false); 
   that.hasInputText = assertFormItem('text', true); 
   that.hasNoInputText = assertFormItem('text', false); 
+  that.hasInputPassword = assertFormItem('password', true); 
+  that.hasNoInputPassword = assertFormItem('password', false); 
+  that.hasInputRadio = assertFormItem('radio', true); 
+  that.hasNoInputRadio = assertFormItem('radio', false); 
+  that.hasInputCheckbox = assertFormItem('checkbox', true); 
+  that.hasNoInputCheckbox = assertFormItem('checkbox', false); 
+  
 
   // return tests
   return that;

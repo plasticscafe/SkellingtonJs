@@ -131,4 +131,10 @@ describe 'test of finklestein as SkellingtonJs tester', ->
       describe 'hasNoButton', formDescribe 'hasNoButton', 'button', 'assertDoesntExist'
       describe 'hasInputText', formDescribe 'hasInputText', 'text', 'assertExists'
       describe 'hasNoInputText', formDescribe 'hasNoInputText', 'text', 'assertDoesntExist'
+      describe 'hasInputPassword', formDescribe 'hasInputPassword', 'password', 'assertExists'
+      describe 'hasNoInputPassword', formDescribe 'hasNoInputPassword', 'password', 'assertDoesntExist'
+      describe 'hasInputRadio', formDescribe 'hasInputRadio', 'radio', 'assertExists'
+      describe 'hasNoInputRadio', formDescribe 'hasNoInputRadio', 'radio', 'assertDoesntExist'
+      describe 'hasInputCheckbox', formDescribe 'hasInputCheckbox', 'checkbox', 'assertExists'
+      describe 'hasNoInputCheckbox', formDescribe 'hasNoInputCheckbox', 'checkbox', 'assertDoesntExist'
 
