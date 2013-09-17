@@ -167,7 +167,7 @@ index.htmlが生成されます
 	* ページ内にRadioボタンが存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoInputRadioボタン ([name]), [テストメッセージ]`
+* `jack.hasNoInputRadio ([name]), [テストメッセージ]`
 	* ページ内にRadioボタンが存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
@@ -175,8 +175,24 @@ index.htmlが生成されます
 	* ページ内にチェックボックスが存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoInputCheckboxボタン ([name]), [テストメッセージ]`
+* `jack.hasNoInputCheckbox ([name]), [テストメッセージ]`
 	* ページ内にチェックボックスが存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasSelect ([name]), [テストメッセージ]`
+	* ページ内にセレクトボックスが存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoSelect ([name]), [テストメッセージ]`
+	* ページ内にセレクトボックスが存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasTextarea ([name]), [テストメッセージ]`
+	* ページ内にテキストエリアが存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoTextarea ([name]), [テストメッセージ]`
+	* ページ内にテキストエリアが存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
 
