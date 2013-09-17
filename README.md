@@ -126,8 +126,58 @@ index.htmlが生成されます
 * `jack.hasNode [selector], [テストメッセージ]`
 	* ページ内にSelector指定されたHTML要素が存在するかどうか
 
-* `jack.hasNoText [href], [テストメッセージ]`
+* `jack.hasNoNode [href], [テストメッセージ]`
 	* ページ内にSelector指定されたHTML要素が存在"しない"かどうか
+
+#### フォーム要素の存在チェック
+
+* `jack.hasSubmit [text], ([name]), [テストメッセージ]`
+	* ページ内にSubmitボタンが存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoSubmit [text], ([name]), [テストメッセージ]`
+	* ページ内にSubmitボタンが存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasButton [text], ([name]), [テストメッセージ]`
+	* ページ内にボタンが存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoButton [text], ([name]), [テストメッセージ]`
+	* ページ内にボタンが存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasInputText [text], ([name]), [テストメッセージ]`
+	* ページ内にテキスト入力が存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoInputText [text], ([name]), [テストメッセージ]`
+	* ページ内にテキスト入力が存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasInputPassword [text], ([name]), [テストメッセージ]`
+	* ページ内にパスワード入力が存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoInputPassword [text], ([name]), [テストメッセージ]`
+	* ページ内にパスワード入力が存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasInputRadio [text], ([name]), [テストメッセージ]`
+	* ページ内にRadioボタンが存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoInputRadioボタン [text], ([name]), [テストメッセージ]`
+	* ページ内にRadioボタンが存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasInputCheckbox [text], ([name]), [テストメッセージ]`
+	* ページ内にチェックボックスが存在するかどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
+
+* `jack.hasNoInputCheckboxボタン [text], ([name]), [テストメッセージ]`
+	* ページ内にチェックボックスが存在"しない"かどうか
+    * nameが指定された場合はname="[name]"の要素のみを対象とする
 
 
 #### CasperJSのテストも使用可能

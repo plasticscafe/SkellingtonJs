@@ -74,7 +74,7 @@ var Finklestein = function(casper, assert){
 
   //////// form 
   // form input assert function
-  var assertFormItem = function(type, has){
+  var assertFormInput = function(type, has){
     var assertType = (has === false) ? 'assertDoesntExist' : 'assertExists';
     var t = type;
     return function(){
@@ -87,18 +87,18 @@ var Finklestein = function(casper, assert){
       });
     };
   };
-  that.hasSubmit = assertFormItem('submit', true); 
-  that.hasNoSubmit = assertFormItem('submit', false); 
-  that.hasButton = assertFormItem('button', true); 
-  that.hasNoButton = assertFormItem('button', false); 
-  that.hasInputText = assertFormItem('text', true); 
-  that.hasNoInputText = assertFormItem('text', false); 
-  that.hasInputPassword = assertFormItem('password', true); 
-  that.hasNoInputPassword = assertFormItem('password', false); 
-  that.hasInputRadio = assertFormItem('radio', true); 
-  that.hasNoInputRadio = assertFormItem('radio', false); 
-  that.hasInputCheckbox = assertFormItem('checkbox', true); 
-  that.hasNoInputCheckbox = assertFormItem('checkbox', false); 
+  that.hasSubmit = assertFormInput('submit', true); 
+  that.hasNoSubmit = assertFormInput('submit', false); 
+  that.hasButton = assertFormInput('button', true); 
+  that.hasNoButton = assertFormInput('button', false); 
+  that.hasInputText = assertFormInput('text', true); 
+  that.hasNoInputText = assertFormInput('text', false); 
+  that.hasInputPassword = assertFormInput('password', true); 
+  that.hasNoInputPassword = assertFormInput('password', false); 
+  that.hasInputRadio = assertFormInput('radio', true); 
+  that.hasNoInputRadio = assertFormInput('radio', false); 
+  that.hasInputCheckbox = assertFormInput('checkbox', true); 
+  that.hasNoInputCheckbox = assertFormInput('checkbox', false); 
 
   // form select assert function
   var assertFormItem = function(type, has){
