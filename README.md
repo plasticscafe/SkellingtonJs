@@ -131,51 +131,51 @@ index.htmlが生成されます
 
 #### フォーム要素の存在チェック
 
-* `jack.hasSubmit [text], ([name]), [テストメッセージ]`
+* `jack.hasSubmit ([name]), [テストメッセージ]`
 	* ページ内にSubmitボタンが存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoSubmit [text], ([name]), [テストメッセージ]`
+* `jack.hasNoSubmit ([name]), [テストメッセージ]`
 	* ページ内にSubmitボタンが存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasButton [text], ([name]), [テストメッセージ]`
+* `jack.hasButton ([name]), [テストメッセージ]`
 	* ページ内にボタンが存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoButton [text], ([name]), [テストメッセージ]`
+* `jack.hasNoButton ([name]), [テストメッセージ]`
 	* ページ内にボタンが存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasInputText [text], ([name]), [テストメッセージ]`
+* `jack.hasInputText ([name]), [テストメッセージ]`
 	* ページ内にテキスト入力が存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoInputText [text], ([name]), [テストメッセージ]`
+* `jack.hasNoInputText ([name]), [テストメッセージ]`
 	* ページ内にテキスト入力が存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasInputPassword [text], ([name]), [テストメッセージ]`
+* `jack.hasInputPassword ([name]), [テストメッセージ]`
 	* ページ内にパスワード入力が存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoInputPassword [text], ([name]), [テストメッセージ]`
+* `jack.hasNoInputPassword ([name]), [テストメッセージ]`
 	* ページ内にパスワード入力が存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasInputRadio [text], ([name]), [テストメッセージ]`
+* `jack.hasInputRadio ([name]), [テストメッセージ]`
 	* ページ内にRadioボタンが存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoInputRadioボタン [text], ([name]), [テストメッセージ]`
+* `jack.hasNoInputRadioボタン ([name]), [テストメッセージ]`
 	* ページ内にRadioボタンが存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasInputCheckbox [text], ([name]), [テストメッセージ]`
+* `jack.hasInputCheckbox ([name]), [テストメッセージ]`
 	* ページ内にチェックボックスが存在するかどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
-* `jack.hasNoInputCheckboxボタン [text], ([name]), [テストメッセージ]`
+* `jack.hasNoInputCheckboxボタン ([name]), [テストメッセージ]`
 	* ページ内にチェックボックスが存在"しない"かどうか
     * nameが指定された場合はname="[name]"の要素のみを対象とする
 
